@@ -15,8 +15,8 @@
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    background-color: #FAF9F6;
-    color: #0F172A;
+    background-color: #070B14;
+    color: #F8FAFC;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   }
 
@@ -27,8 +27,8 @@
   }
 }
 
-/* 🌈 ULTRA-PREMIUM MULTI-COLOR RUNNING LIGHT BORDER (चमकती हुई दौड़ती बाउंड्री) */
-@keyframes neon-flow-gradient {
+/* 👑 PURE LUXURY RUNNING GOLD & RAINBOW NEON BORDER */
+@keyframes luxury-border-spin {
   0% {
     background-position: 0% 50%;
   }
@@ -40,112 +40,64 @@
   }
 }
 
-.running-light-border {
+.luxury-glow-border {
   position: relative;
-  border-radius: 1.25rem;
-  background: #ffffff;
+  border-radius: 1.5rem;
+  background: #0D1424;
 }
 
-.running-light-border::before {
+.luxury-glow-border::before {
   content: '';
   position: absolute;
-  inset: -3px;
+  inset: -2px;
   border-radius: inherit;
-  padding: 3px;
+  padding: 2px;
   background: linear-gradient(
     90deg,
-    #ff007a,
-    #9333ea,
-    #3b82f6,
-    #10b981,
-    #f59e0b,
-    #ff007a
+    #F59E0B,
+    #EC4899,
+    #8B5CF6,
+    #3B82F6,
+    #10B981,
+    #F59E0B
   );
   background-size: 300% 300%;
-  animation: neon-flow-gradient 3.5s linear infinite;
+  animation: luxury-border-spin 4s linear infinite;
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box, 
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-  z-index: 1;
+  z-index: 10;
 }
 
-/* 💥 VIBRANT 3D ELEVATION & SHADOW (उभरता हुआ कार्ड) */
-.card-3d-lift {
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+/* 💎 GLASSMORPHISM ULTRA-LUXE */
+.glass-island {
+  background: rgba(13, 20, 36, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
-.card-3d-lift:hover {
+.glass-card {
+  background: linear-gradient(180deg, rgba(20, 30, 52, 0.6) 0%, rgba(10, 16, 30, 0.8) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 🌟 CARD 3D FLOAT & GLOW */
+.card-luxe-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-luxe-hover:hover {
   transform: translateY(-8px) scale(1.015);
-  box-shadow: 0 25px 40px -10px rgba(15, 23, 42, 0.16), 0 0 25px 3px rgba(217, 119, 6, 0.22);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px 2px rgba(245, 158, 11, 0.25);
+  border-color: rgba(245, 158, 11, 0.4);
 }
 
-/* 🎬 ENTRANCE ANIMATIONS (ऊपर से गिरते हुए और दाएँ-बाएँ से आते हुए) */
-@keyframes fall-from-top {
-  0% {
-    opacity: 0;
-    transform: translateY(-40px) scale(0.97);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes slide-from-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-from-right {
-  0% {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes float-pulse {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-.anim-fall {
-  animation: fall-from-top 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.anim-slide-left {
-  animation: slide-from-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.anim-slide-right {
-  animation: slide-from-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.anim-floating {
-  animation: float-pulse 4s ease-in-out infinite;
-}
-
-/* Tactile button active state */
-.btn-tactile {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.btn-tactile:active {
+/* Tactile button active */
+.btn-haptic:active {
   transform: scale(0.96);
 }
