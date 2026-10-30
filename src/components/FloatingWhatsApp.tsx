@@ -1,47 +1,143 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { agencyConfig } from "@/config/agency";
 import { getGeneralWhatsAppLink } from "@/data/properties";
-import { MessageCircle, Phone, Sparkles } from "lucide-react";
+import { MessageCircle, Phone, X, CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function FloatingWhatsApp() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   const whatsappUrl = getGeneralWhatsAppLink(
     agencyConfig.whatsappNumber,
-    "नमस्ते राजेश जी, मुझे आपकी वेबसाइट पर लिस्टेड प्रॉपर्टीज देखने के लिए फ्री साइट विजिट शेड्यूल करनी है।"
+    "नमस्ते, मुझे प्रॉपर्टी के बारे में तुरंत जानकारी चाहिए।"
   );
 
-  return (
-    <aside aria-label="Quick Actions" className="fixed bottom-0 inset-x-0 z-40 md:bottom-6 md:right-6 md:left-auto md:w-auto p-2.5 sm:p-0">
-      <div className="max-w-md mx-auto md:max-w-none glass-island md:bg-transparent rounded-2xl md:rounded-full p-2 md:p-0 border border-amber-500/30 md:border-none shadow-2xl shadow-black">
-        <div className="flex items-center gap-2">
-          {/* Mobile Call Button */}
-          <a
-            href={`tel:${agencyConfig.whatsappNumber}`}
-            className="flex-1 md:hidden flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/10 text-white font-black text-xs border border-white/10"
-          >
-            <Phone className="w-4 h-4 text-amber-400" />
-            <span>कॉल करें</span>
-          </a>
+  // Mohit P Jain WhatsApp Link
+  const mohitWhatsAppMessage = "नमस्ते मोहित जी, मुझे अपनी रियल एस्टेट एजेंसी / प्रॉपर्टी बिज़नेस के लिए ऐसी ही शानदार वेबसाइट बनवानी है। कृपया आगे की प्रक्रिया बताएं।";
+  const mohitWhatsAppUrl = `https://wa.me/916263879076?text=${encodeURIComponent(mohitWhatsAppMessage)}`;
 
-          {/* Luxury WhatsApp Button with Pulsing Gold Badge */}
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 md:flex-initial flex items-center justify-center gap-2.5 py-3 px-5 rounded-xl md:rounded-full bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500 hover:from-emerald-400 hover:to-emerald-500 text-white font-black text-xs sm:text-sm md:text-base shadow-xl shadow-emerald-600/40 transition-all hover:scale-105 active:scale-95 group"
+  return (
+    <>
+      <aside aria-label="Quick Actions" className="fixed bottom-0 inset-x-0 z-40 md:bottom-5 md:right-5 md:left-auto md:w-auto p-2.5 sm:p-3 bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-t border-slate-200 md:border-none shadow-2xl md:shadow-none">
+        <div className="flex flex-col items-center gap-2 max-w-md mx-auto md:max-w-none">
+          
+          {/* 1. CALL & WHATSAPP BUTTONS BAR */}
+          <div className="flex items-center gap-2 w-full">
+            {/* Call Button for Mobile */}
+            <a
+              href={`tel:${agencyConfig.whatsappNumber}`}
+              className="flex-1 md:hidden flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 text-white font-bold text-xs shadow-md"
+            >
+              <Phone className="w-4 h-4 text-gold-400" />
+              <span>कॉल करें</span>
+            </a>
+
+            {/* WhatsApp Button */}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 md:flex-initial flex items-center justify-center gap-2.5 py-3 px-5 rounded-xl md:rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm md:text-base shadow-lg shadow-emerald-600/30 transition-all hover:scale-105 active:scale-95 group"
+            >
+              <div className="relative">
+                <MessageCircle className="w-5 h-5 fill-white" />
+                <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+                </span>
+              </div>
+              <span>व्हाट्सएप पर तुरंत संपर्क करें</span>
+            </a>
+          </div>
+
+          {/* 🟡 2. CALL/WHATSAPP BUTTON KE THEEK NICHE: CHHOTA PILA ROUND BOX */}
+          <div
+            onClick={() => setModalOpen(true)}
+            className="w-full text-center py-1.5 px-3 rounded-full bg-[#FACC15] hover:bg-[#EAB308] text-slate-950 font-extrabold text-[11px] sm:text-xs border border-[#CA8A04] shadow-md cursor-pointer transition-transform hover:scale-102 active:scale-95 flex flex-wrap items-center justify-center gap-1 leading-tight"
           >
-            <div className="relative">
-              <MessageCircle className="w-5 h-5 fill-white" />
-              <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-300 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400"></span>
-              </span>
-            </div>
-            <span>VIP साइट विजिट बुक करें</span>
-          </a>
+            <span>Website design Mohit P Jain</span>
+            <span className="underline decoration-slate-950 underline-offset-2">click here</span>
+            <span>aaj hi apni esi website banvaye</span>
+          </div>
+
         </div>
-      </div>
-    </aside>
+      </aside>
+
+      {/* 🪟 POPUP MODAL */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+          <div className="relative w-full max-w-md bg-[#090D1A] rounded-2xl border-2 border-amber-400 shadow-2xl p-6 text-white">
+            
+            {/* Close Button */}
+            <button 
+              onClick={() => setModalOpen(false)}
+              className="absolute top-3 right-3 p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4 text-amber-400" />
+            </button>
+
+            {/* Title */}
+            <div className="text-center pb-3 border-b border-slate-800">
+              <h4 className="text-xl font-black text-white">
+                Mohit P Jain
+              </h4>
+              <p className="text-xs text-amber-300 font-bold mt-0.5">
+                फ़ोन / व्हाट्सएप: 6263879076
+              </p>
+            </div>
+
+            {/* Details List */}
+            <div className="my-4 p-3.5 rounded-xl bg-slate-900 border border-slate-700">
+              <span className="text-xs font-black text-amber-300 uppercase block mb-2">
+                📋 वेबसाइट बनाने के लिए यह जानकारी भेजें:
+              </span>
+              <ul className="space-y-2 text-xs font-bold text-slate-200">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>1. आपकी एजेंसी / फर्म का नाम व लोगो</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>2. ओनर का नाम व व्हाट्सएप नंबर</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>3. शहर व प्रमुख सर्विस एरियाज</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>4. 4 से 6 प्रॉपर्टीज की तस्वीरें, साइज व रेट्स</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Actions */}
+            <div className="flex gap-2">
+              <a
+                href={mohitWhatsAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 py-3 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs flex items-center justify-center gap-1.5"
+              >
+                <MessageCircle className="w-4 h-4 fill-white" />
+                <span>व्हाट्सएप करें</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+
+              <a
+                href="tel:6263879076"
+                className="py-3 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs flex items-center justify-center gap-1"
+              >
+                <Phone className="w-3.5 h-3.5 text-slate-950" />
+                <span>कॉल</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      )}
+    </>
   );
 }
