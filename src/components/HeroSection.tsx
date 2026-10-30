@@ -21,17 +21,49 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative pt-8 pb-16 md:pt-14 md:pb-20 overflow-hidden bg-gradient-to-b from-amber-50/70 via-white to-[#F8FAFC]">
+    <section className="relative pt-4 pb-14 md:pt-8 md:pb-20 overflow-hidden bg-gradient-to-b from-amber-50/70 via-white to-[#F8FAFC]">
       {/* Background Subtle Elements */}
       <div className="absolute top-0 right-10 w-96 h-96 rounded-full bg-amber-200/30 blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-5 w-80 h-80 rounded-full bg-emerald-100/40 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto space-y-4">
-          {/* Trust Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-amber-300 shadow-xs text-xs sm:text-sm font-black text-slate-800">
-            <Sparkles className="w-4 h-4 text-amber-500" />
-            <span>{agencyConfig.city} के सबसे भरोसेमंद स्थानीय प्रॉपर्टी डीलर</span>
+                    {/* 🌟 OWNER PROFILE & BRAND PORTFOLIO (COMPACT OPTION B) */}
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2.5 sm:gap-4 p-2 sm:py-2 sm:px-5 rounded-2xl sm:rounded-full bg-white border border-amber-300 shadow-md mx-auto text-left transition-all hover:border-amber-400">
+            {/* Owner Photo with Golden Border & Online status */}
+            <div className="flex items-center gap-2.5 shrink-0">
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80"
+                  alt={agencyConfig.brokerName}
+                  className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-amber-500 shadow-xs"
+                />
+                <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white" title="ऑनलाइन उपलब्ध"></span>
+              </div>
+              <div className="sm:hidden text-left">
+                <div className="text-xs font-black text-slate-900 leading-tight">{agencyConfig.brokerName}</div>
+                <div className="text-[10px] font-bold text-amber-700">{agencyConfig.name}</div>
+              </div>
+            </div>
+
+            {/* Owner & Brand Details + Portfolio Stats */}
+            <div className="flex flex-col gap-1 text-center sm:text-left">
+              <div className="hidden sm:flex items-center gap-2">
+                <span className="text-xs sm:text-sm font-black text-slate-900">{agencyConfig.brokerName}</span>
+                <span className="text-[10px] font-bold text-slate-400">•</span>
+                <span className="text-xs font-bold text-amber-700">{agencyConfig.name}</span>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-extrabold border border-emerald-200">
+                  <ShieldCheck className="w-3 h-3 text-emerald-600" /> प्रमाणित सलाहकार
+                </span>
+              </div>
+
+              {/* Portfolio Stats Badges */}
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 text-[10px] sm:text-[11px] font-extrabold text-slate-700">
+                <span className="bg-amber-100/90 text-amber-900 px-2 py-0.5 rounded-md">⭐ 12+ वर्ष अनुभव</span>
+                <span className="bg-slate-100 text-slate-800 px-2 py-0.5 rounded-md">🏆 500+ डील्स</span>
+                <span className="bg-emerald-100/90 text-emerald-900 px-2 py-0.5 rounded-md">✓ 100% वेरिफाइड</span>
+              </div>
+            </div>
           </div>
 
           {/* High-Contrast Bold Headline */}
