@@ -19,32 +19,32 @@ export default function FloatingWhatsApp() {
 
   return (
     <>
-      <aside aria-label="Quick Actions" className="fixed bottom-0 inset-x-0 z-40 md:bottom-5 md:right-5 md:left-auto md:w-auto p-2.5 sm:p-3 bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-t border-slate-200 md:border-none shadow-2xl md:shadow-none">
+      <aside aria-label="Quick Actions" className="fixed bottom-0 inset-x-0 z-40 md:bottom-5 md:right-5 md:left-auto md:w-auto p-2.5 sm:p-3 bg-white/95 backdrop-blur-md border-t md:border border-slate-200 md:rounded-2xl shadow-2xl">
         <div className="flex flex-col items-center gap-2 max-w-md mx-auto md:max-w-none">
           
-          {/* 1. CALL & WHATSAPP BUTTONS BAR */}
+          {/* 1. CALL & WHATSAPP BUTTONS BAR (MOBILE & PC BOTH) */}
           <div className="flex items-center gap-2 w-full">
-            {/* Call Button for Mobile */}
+            {/* Call Button for Mobile & PC */}
             <a
               href={`tel:${agencyConfig.whatsappNumber}`}
-              className="flex-1 md:hidden flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 text-white font-bold text-xs shadow-md"
+              className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs sm:text-sm shadow-md transition-all hover:scale-102 active:scale-95 shrink-0"
             >
-              <Phone className="w-4 h-4 text-gold-400" />
+              <Phone className="w-4 h-4 text-amber-400" />
               <span>कॉल करें</span>
             </a>
 
-            {/* WhatsApp Button */}
+            {/* WhatsApp Button for Mobile & PC */}
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 md:flex-initial flex items-center justify-center gap-2.5 py-3 px-5 rounded-xl md:rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm md:text-base shadow-lg shadow-emerald-600/30 transition-all hover:scale-105 active:scale-95 group"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm shadow-md shadow-emerald-600/30 transition-all hover:scale-102 active:scale-95 group whitespace-nowrap"
             >
               <div className="relative">
-                <MessageCircle className="w-5 h-5 fill-white" />
-                <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-white" />
+                <span className="absolute -top-1 -right-1 flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                 </span>
               </div>
               <span>व्हाट्सएप पर तुरंत संपर्क करें</span>
@@ -54,7 +54,7 @@ export default function FloatingWhatsApp() {
           {/* 🟡 2. CALL/WHATSAPP BUTTON KE THEEK NICHE: CHHOTA PILA ROUND BOX */}
           <div
             onClick={() => setModalOpen(true)}
-            className="w-full text-center py-1.5 px-3 rounded-full bg-[#FACC15] hover:bg-[#EAB308] text-slate-950 font-extrabold text-[11px] sm:text-xs border border-[#CA8A04] shadow-md cursor-pointer transition-transform hover:scale-102 active:scale-95 flex flex-wrap items-center justify-center gap-1 leading-tight"
+            className="w-full text-center py-1.5 px-3 rounded-full bg-[#FACC15] hover:bg-[#EAB308] text-slate-950 font-black text-[11px] sm:text-xs border border-[#CA8A04] shadow-sm cursor-pointer transition-transform hover:scale-102 active:scale-95 flex items-center justify-center gap-1.5"
           >
             <span>Website design Mohit P Jain</span>
             <span className="underline decoration-slate-950 underline-offset-2">click here</span>
