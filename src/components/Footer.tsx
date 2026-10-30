@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { agencyConfig } from "@/config/agency";
-import { MapPin, Phone, MessageCircle, ExternalLink, Sparkles, X, CheckCircle2, ArrowRight } from "lucide-react";
+import { MapPin, Phone, MessageCircle, Sparkles, X, CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -98,43 +98,27 @@ export default function Footer() {
           <p>Verified Property Dealer Portal Jaipur</p>
         </div>
 
-        {/* 🟡 3. SABSE NICHE: EXACT 3D FROSTED YELLOW GLASSMORPHISM CARD (AS PER USER REFERENCE IMAGE) */}
-        <div className="pt-4 pb-8 flex justify-center">
-          <div 
+        {/* 🟡 3. SABSE NICHE: CHHOTA SA ROUNDED YELLOW PILL BOX */}
+        <div className="pt-2 pb-6 flex justify-center">
+          <button
             onClick={() => setModalOpen(true)}
-            className="real-yellow-glass-card w-full max-w-3xl p-6 sm:p-9 text-center relative overflow-hidden"
+            className="group px-6 py-3.5 rounded-full bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-300 hover:to-yellow-300 text-slate-950 font-black text-xs sm:text-sm shadow-lg shadow-amber-400/25 border-2 border-amber-300 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
-            {/* Top Sub-tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-950/80 text-amber-300 text-[11px] font-black uppercase tracking-wider mb-3 shadow-md border border-amber-300/30">
-              <Sparkles className="w-3.5 h-3.5 fill-amber-300" />
-              <span>वेबसाइट डिज़ाइन सेवा • CLICK FOR DETAILS</span>
-            </div>
-
-            {/* Main Headline Exact as Requested */}
-            <h3 className="text-xl sm:text-3xl font-black text-slate-950 tracking-tight leading-snug drop-shadow-xs">
-              "ऐसी ही शानदार प्रीमियम वेबसाइट बनवाने के लिए संपर्क करें"
-            </h3>
-
-            {/* Exactly: "Website design Mohit P Jain" */}
-            <div className="mt-2.5 flex items-center justify-center gap-2 flex-wrap">
-              <span className="text-lg sm:text-2xl font-black text-slate-900 tracking-tight">
-                Website design Mohit P Jain
-              </span>
-              <span className="text-xs sm:text-sm font-black bg-slate-950 text-amber-300 px-3 py-1 rounded-full shadow-md">
-                6263879076
-              </span>
-            </div>
-
-            <p className="mt-3 text-xs sm:text-sm font-extrabold text-amber-950/90">
-              👆 क्लिक करें — जरूरी डिटेल्स, डेमो और डायरेक्ट व्हाट्सएप लिंक देखें
-            </p>
-          </div>
+            <Sparkles className="w-4 h-4 fill-slate-950 shrink-0" />
+            <span>Website design Mohit P Jain</span>
+            <span className="bg-slate-950 text-amber-300 text-[11px] font-black px-2.5 py-0.5 rounded-full">
+              Click Here
+            </span>
+            <span className="text-slate-900 font-bold text-[11px] sm:text-xs hidden sm:inline">
+              — आज ही अपनी ऐसी वेबसाइट बनवाएं
+            </span>
+          </button>
         </div>
 
-        {/* 🪟 4. MODAL POPUP: SOLID BLACK & WHITE HIGH CONTRAST */}
+        {/* 🪟 4. MODAL POPUP */}
         {modalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
-            <div className="relative w-full max-w-xl bg-[#090D1A] rounded-3xl border-2 border-amber-400 shadow-2xl p-6 sm:p-8 text-white">
+            <div className="relative w-full max-w-lg bg-[#090D1A] rounded-3xl border-2 border-amber-400 shadow-2xl p-6 sm:p-8 text-white">
               
               {/* Close Button */}
               <button 
@@ -150,7 +134,7 @@ export default function Footer() {
                 <span className="text-xs font-black text-amber-400 uppercase tracking-widest block mb-1">
                   वेबसाइट डेवलपर विवरण
                 </span>
-                <h4 className="text-2xl sm:text-3xl font-black text-white">
+                <h4 className="text-2xl font-black text-white">
                   Mohit P Jain
                 </h4>
                 <div className="inline-block mt-1 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 font-bold text-xs border border-amber-400/30">
@@ -161,7 +145,7 @@ export default function Footer() {
               {/* Required Details List */}
               <div className="my-5 p-4 rounded-2xl bg-slate-900/90 border border-slate-700">
                 <span className="text-xs font-black text-amber-300 uppercase tracking-wider block mb-3">
-                  📋 वेबसाइट बनाने के लिए केवल ये जानकारी भेजें:
+                  📋 आज ही ऐसी वेबसाइट बनवाने के लिए भेजें:
                 </span>
                 <ul className="space-y-2.5 text-xs sm:text-sm font-bold text-slate-100">
                   <li className="flex items-center gap-2.5">
