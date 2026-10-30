@@ -15,7 +15,6 @@
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    /* 🏛️ CRISP LUXURY PEARL WHITE/IVORY BACKGROUND (NO MUDDY COLORS) */
     background-color: #F8FAFC;
     color: #0F172A;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -28,7 +27,7 @@
   }
 }
 
-/* ⚡ LASER RUNNING LIGHT BEAM BORDER (साफ दिखने वाली तेज दौड़ती रोशनी) */
+/* ⚡ BORDER PAR CHALTI HUI CHAMAKTI LIGHT (RUNNING BEAM) */
 @keyframes laser-beam-spin {
   0% {
     background-position: 0% 50%;
@@ -55,7 +54,6 @@
   inset: -3px;
   border-radius: inherit;
   padding: 3px;
-  /* 🌈 3 ULTRA-CONTRAST VIBRANT COLORS: GOLD -> CYAN -> MAGENTA (Crystal Sharp) */
   background: linear-gradient(
     90deg,
     #F59E0B 0%,
@@ -75,12 +73,70 @@
   z-index: 10;
 }
 
-.laser-running-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 40px -12px rgba(15, 23, 42, 0.2), 0 0 25px 2px rgba(245, 158, 11, 0.3);
+/* 🌊 CARD AUR SECTION KE ANDAR LAHRATI HUI LIGHT (WAVE SHIMMER) */
+@keyframes flowing-color-wave {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
-/* 🧊 CRISP NAV HEADER */
+.shimmer-wave-inside {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(245, 158, 11, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: flowing-color-wave 4s infinite linear;
+}
+
+/* 🟡 YELLOW GLASS LOOK BOX WITH RUNNING LIGHT BORDER */
+.yellow-glass-box {
+  position: relative;
+  border-radius: 1.75rem;
+  background: rgba(254, 240, 138, 0.22);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.3);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.yellow-glass-box::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  padding: 3px;
+  background: linear-gradient(
+    90deg,
+    #F59E0B 0%,
+    #FBBF24 25%,
+    #10B981 50%,
+    #F59E0B 75%,
+    #D97706 100%
+  );
+  background-size: 250% 250%;
+  animation: laser-beam-spin 3s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.yellow-glass-box:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 25px 50px -10px rgba(245, 158, 11, 0.4);
+}
+
+/* Clean Nav */
 .clean-nav-header {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
@@ -88,7 +144,6 @@
   box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
 }
 
-/* Tactile button */
 .btn-haptic:active {
   transform: scale(0.96);
 }
