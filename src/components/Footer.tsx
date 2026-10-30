@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { agencyConfig } from "@/config/agency";
-import { MapPin, Phone, MessageCircle, ExternalLink, Sparkles, X, CheckCircle2, ArrowRight, Code2 } from "lucide-react";
+import { MapPin, Phone, MessageCircle, ExternalLink, Sparkles, X, CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -16,7 +16,7 @@ export default function Footer() {
     <footer className="bg-[#0A0F1D] text-slate-300 pt-16 pb-12 border-t-2 border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* 🏢 1. MAIN AGENCY FOOTER DETAILS (OFFICE, SERVICES, CONTACTS) */}
+        {/* 🏢 1. MAIN AGENCY FOOTER DETAILS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-slate-800">
           {/* Col 1 */}
           <div className="space-y-4">
@@ -98,51 +98,40 @@ export default function Footer() {
           <p>Verified Property Dealer Portal Jaipur</p>
         </div>
 
-        {/* 🟡 3. SABSE NICHE: THE HIGH-CONTRAST PROFESSIONAL YELLOW GLASS BOX (ABSOLUTE BOTTOM) */}
-        <div className="pt-4 pb-8">
+        {/* 🟡 3. SABSE NICHE: EXACT 3D FROSTED YELLOW GLASSMORPHISM CARD (AS PER USER REFERENCE IMAGE) */}
+        <div className="pt-4 pb-8 flex justify-center">
           <div 
             onClick={() => setModalOpen(true)}
-            className="w-full max-w-4xl mx-auto rounded-2xl p-5 sm:p-7 transition-all duration-300 cursor-pointer shadow-xl relative overflow-hidden"
-            style={{
-              background: "linear-gradient(135deg, #FEF08A 0%, #FDE047 50%, #FACC15 100%)",
-              border: "3px solid #CA8A04",
-              boxShadow: "0 10px 30px -5px rgba(234, 179, 8, 0.4)"
-            }}
+            className="real-yellow-glass-card w-full max-w-3xl p-6 sm:p-9 text-center relative overflow-hidden"
           >
-            {/* Top Micro Tag */}
-            <div className="flex items-center justify-between mb-2">
-              <span className="px-3 py-1 rounded-full bg-slate-950 text-amber-300 text-[11px] font-black uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
-                <Sparkles className="w-3.5 h-3.5 fill-amber-300" />
-                <span>वेबसाइट डिज़ाइन & डेवलपमेंट</span>
+            {/* Top Sub-tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-950/80 text-amber-300 text-[11px] font-black uppercase tracking-wider mb-3 shadow-md border border-amber-300/30">
+              <Sparkles className="w-3.5 h-3.5 fill-amber-300" />
+              <span>वेबसाइट डिज़ाइन सेवा • CLICK FOR DETAILS</span>
+            </div>
+
+            {/* Main Headline Exact as Requested */}
+            <h3 className="text-xl sm:text-3xl font-black text-slate-950 tracking-tight leading-snug drop-shadow-xs">
+              "ऐसी ही शानदार प्रीमियम वेबसाइट बनवाने के लिए संपर्क करें"
+            </h3>
+
+            {/* Exactly: "Website design Mohit P Jain" */}
+            <div className="mt-2.5 flex items-center justify-center gap-2 flex-wrap">
+              <span className="text-lg sm:text-2xl font-black text-slate-900 tracking-tight">
+                Website design Mohit P Jain
               </span>
-              <span className="text-[11px] font-black text-amber-950 bg-amber-200/80 px-2.5 py-0.5 rounded-md border border-amber-400">
-                CLICK TO OPEN DETAILS 👆
+              <span className="text-xs sm:text-sm font-black bg-slate-950 text-amber-300 px-3 py-1 rounded-full shadow-md">
+                6263879076
               </span>
             </div>
 
-            {/* Main Text: 100% Solid Dark Black/Navy for Crystal Clear Contrast on Yellow */}
-            <div className="text-center my-2">
-              <h3 className="text-lg sm:text-2xl md:text-3xl font-black text-slate-950 tracking-tight leading-snug">
-                "ऐसी ही शानदार प्रीमियम वेबसाइट बनवाने के लिए संपर्क करें"
-              </h3>
-              <div className="mt-1 flex items-center justify-center gap-2">
-                <span className="text-base sm:text-xl font-black text-slate-900 underline decoration-slate-950 underline-offset-4">
-                  Mohit P Jain
-                </span>
-                <span className="text-xs sm:text-sm font-black bg-slate-950 text-white px-2.5 py-0.5 rounded-full">
-                  6263879076
-                </span>
-              </div>
-            </div>
-
-            {/* Helper Text */}
-            <p className="text-center text-xs sm:text-sm font-extrabold text-amber-950 mt-2">
-              👉 क्लिक करें — सारी जानकारी, जरूरी डिटेल्स और डायरेक्ट व्हाट्सएप लिंक देखें
+            <p className="mt-3 text-xs sm:text-sm font-extrabold text-amber-950/90">
+              👆 क्लिक करें — जरूरी डिटेल्स, डेमो और डायरेक्ट व्हाट्सएप लिंक देखें
             </p>
           </div>
         </div>
 
-        {/* 🪟 4. MODAL POPUP: PURE BLACK BACKGROUND + PURE WHITE/GOLD TEXT (ZERO BLURRY MUD) */}
+        {/* 🪟 4. MODAL POPUP: SOLID BLACK & WHITE HIGH CONTRAST */}
         {modalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
             <div className="relative w-full max-w-xl bg-[#090D1A] rounded-3xl border-2 border-amber-400 shadow-2xl p-6 sm:p-8 text-white">
@@ -169,7 +158,7 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Required Details List with 100% Crisp Contrast */}
+              {/* Required Details List */}
               <div className="my-5 p-4 rounded-2xl bg-slate-900/90 border border-slate-700">
                 <span className="text-xs font-black text-amber-300 uppercase tracking-wider block mb-3">
                   📋 वेबसाइट बनाने के लिए केवल ये जानकारी भेजें:
